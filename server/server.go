@@ -70,10 +70,10 @@ func (g *Greeter) startREST() error {
 // SayHello says hello
 func (g *Greeter) SayHello(ctx context.Context, r *pb.HelloRequest) (*pb.HelloReply, error) {
 	var fr float64
-	var fri int
+	var fri int64
 	fri = 5
 	fr = 3.14/float64(fri)
 	return &pb.HelloReply{
-		Message: fmt.Sprintf("Hello, %s, %d, %d", r.Name,fri , fr),
+		Message: fmt.Sprintf("Имя, %s, целое число %d, число с плавающей запятой %d", r.Name,fri , fr),
 	}, nil
 }
