@@ -77,3 +77,10 @@ func (g *Greeter) SayHello(ctx context.Context, r *pb.HelloRequest) (*pb.HelloRe
 		Message: fmt.Sprintf("Имя, %s, целое число %d, число с плавающей запятой %d", r.Name,fri , fr),
 	}, nil
 }
+
+// SayTim says hello
+func (g *Greeter) SayTim(ctx context.Context, r *pb.TimRequest) (*pb.TimReply, error) {
+	return &pb.TimReply{
+		Message: fmt.Sprintf("Вы ввели число  %d", r.Year),
+	}, nil
+}

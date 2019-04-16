@@ -15,6 +15,31 @@
     "application/json"
   ],
   "paths": {
+    "/api/Tim/{year}": {
+      "get": {
+        "operationId": "SayTim",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/helloworldTimReply"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "year",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "Greeter"
+        ]
+      }
+    },
     "/api/hello/{name}": {
       "get": {
         "operationId": "SayHello",
@@ -54,6 +79,14 @@
         "dlt": {
           "type": "string",
           "format": "int64"
+        }
+      }
+    },
+    "helloworldTimReply": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
         }
       }
     }

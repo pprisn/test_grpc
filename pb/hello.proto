@@ -8,8 +8,14 @@ service Greeter {
 	rpc SayHello (HelloRequest) returns (HelloReply) {
 		option(google.api.http) = {
 			get: "/api/hello/{name}",
-		};
-	}
+			}; 
+		}
+	
+	rpc SayTim (TimRequest) returns (TimReply) {
+		option(google.api.http) = {
+			get: "/api/Tim/{year}",
+			};
+        }
 }
 
 message HelloRequest {
@@ -20,5 +26,13 @@ message HelloReply {
 	string message = 1;
         float karma = 2;
         int64 dlt = 3;
+}
+
+message TimRequest {
+	int64 year = 1;
+}
+
+message TimReply {
+	string message = 1;
 
 }
